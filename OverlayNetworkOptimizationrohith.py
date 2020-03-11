@@ -1,28 +1,12 @@
-# -*- coding: utf-8 -*-
 
-#########################################################
-#                                                       #
-#       Assignment 2: GENETIC ALGORITHM APPLIED TO      #
-#       OVERLAY NETWORK OPTIMIZATION                    #
-#                                                       #
-# 		Author:                                         #
-#                                                       #
-#       Student ID:                                     #
-#                                                       #
-#		Please DO NOT publish your implemented code     #
-#       for example on GitHub							#
-#                                                       #
-#########################################################
-#In[1] :
 import random
 
 import numpy as np
 import matplotlib.pyplot as plt
 
 
-#########################################################
 # PARAMETERS                                            #
-#########################################################
+
 popSize = 100
 chromLength = 300
 iteration_max = 100
@@ -32,10 +16,7 @@ mutation_rate = 0.001
 fitness = np.empty([popSize])
 costVector = np.empty([chromLength])
 
-#########################################################
 # Load network                                          #
-#########################################################
-
 def loadNetwork():
 
     fname = "network.txt"
@@ -47,9 +28,8 @@ def loadNetwork():
 
 
 
-#########################################################
 # FITNESS EVALUATION                                    #
-#########################################################
+
 def evaluateFitness(chromosome,best):
     costFullyConnectedNetwork=30098.059999999983
     fitness_total=0.0
@@ -77,9 +57,9 @@ def evaluateFitness(chromosome,best):
 
 
 
-#########################################################
+
 # PERFORMANCE GRAPH                                     #
-#########################################################
+
 def plotChart(best,avg):
     plt.plot(best,label='best')
     plt.plot(avg,label='average')
